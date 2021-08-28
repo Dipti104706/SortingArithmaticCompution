@@ -6,10 +6,10 @@ read -p "Enter third number:" c
 
 declare -A dictionary
 
-result1=$(( $a + $b * $c ))
-result2=$(( $a * $b + $c ))
-result3=$(( $c + $a / $b ))
-result4=$(( $a % $b / $c ))
+dictionary["result1"]="$(( $a + $b * $c ))"
+dictionary["result2"]="$(( $a * $b + $c ))"
+dictionary["result3"]="$(( $c + $a / $b ))"
+dictionary["result4"]="$(( $a % $b / $c ))"
 
 function descending() {
 	val=("$@")
@@ -35,4 +35,4 @@ function descending() {
 	done
  echo "Array values after sorting:: ${array[@]}"
 }
-echo $(descending "${dict[@]}")
+echo $(descending "${dictionary[@]}")
